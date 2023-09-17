@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>EvidenciaUFOSearch</title>
+</head>
+
+<body style="background-image: url('img/background.jpg');">
+    <div class="container">
+        <div class="search-container">
+            <h1 class="logo">EvidenciaUFOSearch</h1>
+            <form method="POST" action="/buscar" class="search-form">
+                <input type="text" name="query" class="search-input" placeholder="Buscar en la web">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/Fr13nds07860376/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/Fr13nds07860376" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/Fr13nds07860376" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <div class="resultados">
+        <h2>Resultados de la búsqueda:</h2>
+        <ul>
+            {% for resultado in resultados %}
+            <li><a href="{{ resultado.link }}" target="_blank">{{ resultado.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+
+</html>
